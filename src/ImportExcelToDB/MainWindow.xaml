@@ -1,0 +1,68 @@
+﻿<Window x:Class="ImportExcelToDB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:ImportExcelToDB"
+        mc:Ignorable="d"
+        Title="ImportExcelToDB" Height="450" Width="800" Icon="/Images/import_file_yellow.png">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
+    <xctk:BusyIndicator IsBusy="{Binding Data.IsBusy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+        <StackPanel>
+            <ContentControl/>
+
+            <Grid Margin="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="5,0,0,0">
+                    <TextBlock x:Name="tbCountry" Margin="0,5,0,0" Text="Country:"/>
+                    <ComboBox x:Name="cbCountry" Margin="0,5,0,0" 
+                              ItemsSource="{Binding Data.Countries}"
+                              SelectedItem="{Binding Data.SelectedCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"          
+                              DisplayMemberPath="Name"/>
+                    <TextBlock x:Name="tbCustomer" Margin="0,5,0,0" Text="Customer:"/>
+                    <ComboBox x:Name="cbCustomer" Margin="0,5,0,0"
+                              ItemsSource="{Binding Data.Customers}"
+                              SelectedItem="{Binding Data.SelectedCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              DisplayMemberPath="DisplayName"/>
+                    <Button x:Name="btnOpen" Margin="0,5,0,0" Command="{Binding Data.OpenFolderCommand}">Open Folder</Button>
+                    <TextBox x:Name="txtPath" Margin="0,5,0,0" Text="{Binding Data.FolderPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <Button x:Name="btnLoad" Margin="0,5,0,0" Command="{Binding Data.ImportCommand}">Import</Button>
+                </StackPanel>
+
+                <DataGrid Name="FilesDataGrid" Grid.Row="1" Grid.Column="0" 
+                          ItemsSource="{Binding Data.Files, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                          SelectedItem="{Binding Data.SelectedFile, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          IsReadOnly="True"
+                          AutoGenerateColumns="False"
+                          LoadingRow="FilesDataGrid_LoadingRow">
+                    <DataGrid.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding Data.ShowErrorsCommand}"/>
+                    </DataGrid.InputBindings>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Width="300" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Status" Width="100" Binding="{Binding Status}"/>
+                        <DataGridTextColumn Header="Date" Width="100" Binding="{Binding Date, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                        <DataGridTextColumn Header="Row Count" Width="100" Binding="{Binding RowCount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+        </StackPanel>
+    
+    </xctk:BusyIndicator>
+</Window>
