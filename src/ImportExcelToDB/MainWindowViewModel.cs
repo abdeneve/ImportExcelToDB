@@ -1,9 +1,9 @@
 ﻿using Domain.Dtos;
 using Domain.Entities;
 using Domain.Enums;
+using Infrastructure;
 using Infrastructure.Context;
 using IronXL;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Win32;
 using System.Data;
@@ -184,25 +184,10 @@ class MainWindowViewModel
 
     private async Task BulkInsertAsync(DataTable dataTable)
     {
-        using SqlConnection connection = new SqlConnection(_connectionString);
-        await connection.OpenAsync();
-        using var bulkCopy = new SqlBulkCopy(connection);
-
-        bulkCopy.DestinationTableName = "Sale";
-        bulkCopy.BatchSize = 10000;
-
-        bulkCopy.ColumnMappings.Add("Id", "SaleId");
-        bulkCopy.ColumnMappings.Add("CountryId", "CountryId");
-        bulkCopy.ColumnMappings.Add("CustomerId", "CustomerId");
-        bulkCopy.ColumnMappings.Add("StoreCustomerCode", "StoreCustomerCode");
-        bulkCopy.ColumnMappings.Add("CustomerItemCode", "CustomerItemCode");
-        bulkCopy.ColumnMappings.Add("Date", "Date");
-        bulkCopy.ColumnMappings.Add("Quantity", "Quantity");
-        bulkCopy.ColumnMappings.Add("Amount", "Amount");
-
         try
         {
-            await bulkCopy.WriteToServerAsync(dataTable);
+            var _bulkInsert = new BulkInsert();
+            await _bulkInsert.BulkInsertAsync(_connectionString, dataTable);
         }
         catch (Exception)
         {
