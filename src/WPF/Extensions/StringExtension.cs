@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ImportExcelToDB.Extensions;
+namespace WPF.Extensions;
 
 public static class StringExtension
 {

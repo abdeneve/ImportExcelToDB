@@ -89,6 +89,6 @@ public class ExcelFile
             Status = Status.Ready;
     }
 
-    public bool IsValid() => Erros.Count() == 0;
+    public bool IsValid() => Erros.Count() == 0 && Status != Status.Imported;
     public bool IsInvalid() => !IsValid();
 }

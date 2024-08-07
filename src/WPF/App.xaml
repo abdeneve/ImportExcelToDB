@@ -1,7 +1,7 @@
-﻿<Application x:Class="ImportExcelToDB.App"
+﻿<Application x:Class="WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ImportExcelToDB"
+             xmlns:local="clr-namespace:WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

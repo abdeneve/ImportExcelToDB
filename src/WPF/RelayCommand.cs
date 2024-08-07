@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace ImportExcelToDB;
+namespace WPF;
 class RelayCommand<T> : ICommand
 {
     Action<T?> _action;
@@ -10,19 +10,19 @@ class RelayCommand<T> : ICommand
 
     public bool CanExecute(T? parameter)
     {
-        return this._canExecute == null || this._canExecute(parameter);
+        return _canExecute == null || _canExecute(parameter);
     }
 
     public void Execute(T? parameter)
     {
-        this._action(parameter);
+        _action(parameter);
     }
 
     public bool CanExecute(object? parameter)
     {
         if (TryGetCommandArg(parameter, out T? res))
         {
-            return this.CanExecute(res);
+            return CanExecute(res);
         }
         return false;
     }
@@ -45,7 +45,7 @@ class RelayCommand<T> : ICommand
     {
         if (parameter is null && default(T) is null)
         {
-            arg = default(T);
+            arg = default;
             return true;
         }
 
@@ -55,7 +55,7 @@ class RelayCommand<T> : ICommand
             return true;
         }
 
-        arg = default(T);
+        arg = default;
         return false;
     }
 

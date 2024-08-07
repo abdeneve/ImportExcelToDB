@@ -11,7 +11,7 @@ using System.IO;
 using System.Windows;
 using WPF.Extensions;
 
-namespace ImportExcelToDB;
+namespace WPF;
 class MainWindowViewModel
 {
     public MainDataModel Data { get; set; }
@@ -83,21 +83,11 @@ class MainWindowViewModel
                 var file = new ExcelFile(name, fileName);
                 file.ValidateDateInFileName();
                 file.ValidateIsImported(_context.Sales.AsQueryable(), Data.SelectedCountry, Data.SelectedCustomer);
-
-                if (file.IsInvalid())
-                    Data.IsInvalid = true;
-
                 Data.Files.Add(file);
             }
 
-            if (Data.IsInvalid)
-            {
-                await Delay();
-                Data.IsBusy = false;
-                return;
-            }
-
-            foreach (var file in Data.Files)
+            var files = Data.Files.Where(p => p.IsValid());
+            foreach (var file in files)
             {
                 WorkBook workBook = WorkBook.Load(file.Path);
                 WorkSheet workSheet = workBook.WorkSheets.First();
@@ -106,7 +96,7 @@ class MainWindowViewModel
                 file.DataTable = dataTable;
                 file.ValidateHasRows(dataTable);
 
-                Int64 index = 0;
+                long index = 0;
                 foreach (DataRow row in dataTable.Rows)
                 {
                     index++;
