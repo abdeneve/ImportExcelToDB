@@ -1,12 +1,7 @@
-﻿using Autofac;
-using Infrastructure;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System.IO;
-using System.Text;
+﻿using Microsoft.Extensions.Configuration;
 using System.Windows;
 
-namespace ImportExcelToDB;
+namespace WPF;
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>

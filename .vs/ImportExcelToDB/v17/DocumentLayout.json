@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84EAE9D6-25A8-4CB7-8C11-4C84602B51B7}|src\\ImportExcelToDB\\WPF.csproj|c:\\data doc\\projects\\github\\importexceltodb\\src\\importexceltodb\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84EAE9D6-25A8-4CB7-8C11-4C84602B51B7}|src\\ImportExcelToDB\\WPF.csproj|solutionrelative:src\\importexceltodb\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B409C856-B6FD-45EB-92E1-EE87433351DC}|src\\Infrastructure\\Infrastructure.csproj|c:\\data doc\\projects\\github\\importexceltodb\\src\\infrastructure\\bulkinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B409C856-B6FD-45EB-92E1-EE87433351DC}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\bulkinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95C32A05-930B-4A94-98E1-AE07DFCC713A}|src\\Domain\\Domain.csproj|c:\\data doc\\projects\\github\\importexceltodb\\src\\domain\\interfaces\\ibulkinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95C32A05-930B-4A94-98E1-AE07DFCC713A}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\interfaces\\ibulkinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\data doc\\projects\\github\\importexceltodb\\src\\wpf\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,39 +36,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindowViewModel.cs",
-              "DocumentMoniker": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\ImportExcelToDB\\MainWindowViewModel.cs",
-              "RelativeDocumentMoniker": "src\\ImportExcelToDB\\MainWindowViewModel.cs",
-              "ToolTip": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\ImportExcelToDB\\MainWindowViewModel.cs",
-              "RelativeToolTip": "src\\ImportExcelToDB\\MainWindowViewModel.cs",
-              "ViewState": "AQIAAKEAAAAAAAAAAAAswLQAAAAFAAAA",
+              "DocumentMoniker": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\WPF\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "src\\WPF\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\WPF\\MainWindowViewModel.cs",
+              "RelativeToolTip": "src\\WPF\\MainWindowViewModel.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAADwv1YAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T01:50:08.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BulkInsert.cs",
-              "DocumentMoniker": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\Infrastructure\\BulkInsert.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\BulkInsert.cs",
-              "ToolTip": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\Infrastructure\\BulkInsert.cs",
-              "RelativeToolTip": "src\\Infrastructure\\BulkInsert.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T01:57:17.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IBulkInsert.cs",
-              "DocumentMoniker": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\Domain\\Interfaces\\IBulkInsert.cs",
-              "RelativeDocumentMoniker": "src\\Domain\\Interfaces\\IBulkInsert.cs",
-              "ToolTip": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\Domain\\Interfaces\\IBulkInsert.cs",
-              "RelativeToolTip": "src\\Domain\\Interfaces\\IBulkInsert.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T01:52:16.936Z",
+              "WhenOpened": "2024-08-07T02:51:32.483Z",
               "EditorCaption": ""
             }
           ]

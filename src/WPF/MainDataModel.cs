@@ -3,7 +3,7 @@ using Domain.Entities;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace ImportExcelToDB;
+namespace WPF;
 class MainDataModel : INotifyPropertyChanged
 {
 
