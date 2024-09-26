@@ -11,7 +11,7 @@ public class ExcelFile
     public DateTime Date { get; set; }
     public Status Status { get; set; }
     public string Path { get; set; }
-    public Int64 RowCount { get; set; }
+    public int RowCount { get; set; }
 
     public List<string> Erros { get; set; } = new();
     public DataTable DataTable { get; set; }
@@ -46,9 +46,9 @@ public class ExcelFile
         }
     }
 
-    public void ValidateHasRows(DataTable dataTable)
+    public void ValidateHasRows()
     {
-        if (dataTable.Rows.Count == 0)
+        if (DataTable.Rows.Count == 0)
             Erros.Add("El archivo no tiene filas!");
     }
 

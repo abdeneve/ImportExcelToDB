@@ -3,7 +3,6 @@ using Domain.Entities;
 using Domain.Enums;
 using Infrastructure;
 using Infrastructure.Context;
-using IronXL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Win32;
 using System.Data;
@@ -19,6 +18,8 @@ class MainWindowViewModel
     internal static ApplicationDbContext _context;
     internal static IConfiguration _configuration { get; private set; }
     internal static string _connectionString { get; private set; }
+
+    private const int BatchSize = 1000;
 
     #region Commands
 
@@ -59,8 +60,26 @@ class MainWindowViewModel
 
     private async void OpenFolderCommandExecute(object obj)
     {
-        Data.IsBusy = true;
+        try
+        {
+            Data.IsBusy = true;
+            await OpenFileAsync();
+            Data.IsBusy = false;
+        }
+        catch (Exception ex)
+        {
+            Data.IsBusy = false;
+            if (!ex.Message.Contains("La solicitud fue abortada: La solicitud fue cancelada."))
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message,
+                    "ImportExcelToDB", MessageBoxButton.OK, MessageBoxImage.Error);
 
+            }
+        }
+    }
+
+    private async Task OpenFileAsync()
+    {
         OpenFolderDialog openFolderDialog = new OpenFolderDialog()
         {
             Title = "Select folder to open ...",
@@ -87,26 +106,38 @@ class MainWindowViewModel
             }
 
             var files = Data.Files.Where(p => p.IsValid());
-            foreach (var file in files)
-            {
-                WorkBook workBook = WorkBook.Load(file.Path);
-                WorkSheet workSheet = workBook.WorkSheets.First();
-                DataTable dataTable = workSheet.ToDataTable(true);
-                file.RowCount = dataTable.Rows.Count;
-                file.DataTable = dataTable;
-                file.ValidateHasRows(dataTable);
-
-                long index = 0;
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    index++;
-                    file.ValidateRow(index, row);
-                }
-                file.ValidateIsReady();
-            }
+            ProcessFiles(files);
         }
         await Delay();
-        Data.IsBusy = false;
+    }
+
+    private void ProcessFiles(IEnumerable<ExcelFile> files)
+    {
+        foreach (var file in files)
+        {
+            var dataTable = ExcelExtension.ReadExcelFile(file.Path);
+            file.RowCount = dataTable.Rows.Count;
+            file.DataTable = new DataTable();
+            file.DataTable = dataTable;
+
+            for (int startRow = 1; startRow < file.RowCount; startRow += BatchSize)
+            {
+                int endRow = Math.Min(startRow + BatchSize, file.RowCount);
+                ValidateBatch(file, startRow, endRow);
+            }
+
+            file.ValidateHasRows();
+            file.ValidateIsReady();
+        }
+    }
+
+    private void ValidateBatch(ExcelFile file, int startRow, int endRow)
+    {
+        Parallel.For(startRow + 1, endRow, index =>
+        {
+            DataRow row = file.DataTable.Rows[index - 1];
+            file.ValidateRow(index, row);
+        });
     }
 
     private bool CanOpenFolderCommandExecute(object obj)
@@ -138,6 +169,8 @@ class MainWindowViewModel
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Question) == MessageBoxResult.Yes)
         {
+            Data.IsBusy = true;
+
             var files = Data.Files.Where(p => p.Status == Status.Ready);
             foreach (var file in files)
             {
@@ -160,10 +193,13 @@ class MainWindowViewModel
                 await BulkInsertAsync(dataTable);
             }
 
+            Data.IsBusy = false;
+
             if (!Data.ImportFailed)
                 MessageBox.Show("¡La importación se ejecutó exitosamente!", "Import", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("Ocurrio un error, no se pudo realizar la importación.", "Import error", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
     }
 
