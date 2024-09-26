@@ -5,10 +5,13 @@
     {
       "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\data doc\\projects\\github\\importexceltodb\\src\\wpf\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
     },
     {
       "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\data doc\\projects\\github\\importexceltodb\\src\\wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+=======
+>>>>>>> d621587ea7d36acf44807ab71cce9f978ef2ebb2
     }
   ],
   "DocumentGroupContainers": [
@@ -44,6 +47,7 @@
               "RelativeDocumentMoniker": "src\\WPF\\MainWindowViewModel.cs",
               "ToolTip": "C:\\Data Doc\\Projects\\GitHub\\ImportExcelToDB\\src\\WPF\\MainWindowViewModel.cs",
               "RelativeToolTip": "src\\WPF\\MainWindowViewModel.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAADAAAAAAAAAAAAAewDoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:33:53.231Z",
@@ -59,6 +63,11 @@
               "RelativeToolTip": "src\\WPF\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-09-26T00:31:51.48Z",
+=======
+              "ViewState": "AQIAAEwAAAAAAAAAAADwv1YAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T02:51:32.483Z",
+>>>>>>> d621587ea7d36acf44807ab71cce9f978ef2ebb2
               "EditorCaption": ""
             }
           ]

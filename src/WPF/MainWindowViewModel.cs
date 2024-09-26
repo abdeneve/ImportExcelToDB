@@ -106,7 +106,27 @@ class MainWindowViewModel
             }
 
             var files = Data.Files.Where(p => p.IsValid());
+<<<<<<< HEAD
             ProcessFiles(files);
+=======
+            foreach (var file in files)
+            {
+                WorkBook workBook = WorkBook.Load(file.Path);
+                WorkSheet workSheet = workBook.WorkSheets.First();
+                DataTable dataTable = workSheet.ToDataTable(true);
+                file.RowCount = dataTable.Rows.Count;
+                file.DataTable = dataTable;
+                file.ValidateHasRows(dataTable);
+
+                long index = 0;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    index++;
+                    file.ValidateRow(index, row);
+                }
+                file.ValidateIsReady();
+            }
+>>>>>>> d621587ea7d36acf44807ab71cce9f978ef2ebb2
         }
         await Delay();
     }
