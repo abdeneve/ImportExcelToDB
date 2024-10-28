@@ -62,6 +62,11 @@ class RelayCommand<T> : ICommand
     public void RaiseCanExecuteChanged()
     {
         if (CanExecuteChanged != null)
-            CanExecuteChanged(this, new EventArgs());
+        {
+            App.Current.Dispatcher.Invoke((Action)delegate
+            {
+                CanExecuteChanged(this, new EventArgs());
+            });
+        }
     }
 }

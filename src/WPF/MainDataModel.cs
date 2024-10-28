@@ -98,7 +98,7 @@ class MainDataModel : INotifyPropertyChanged
 
     private void OnPropertyChanged(string v)
     {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));    
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
