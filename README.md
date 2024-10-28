@@ -15,7 +15,7 @@ This project leverages Domain-Driven Design (DDD) and Model-View-ViewModel (MVVM
 * **WPF:** Microsoft framework for creating desktop applications with rich user interfaces.
 * **C#:** The primary programming language used to develop the application.
 * **.NET 8:** Microsoft development platform that provides a runtime environment and a set of libraries for creating various applications.
-* **IronXL.Excel:** Library used to read and write Excel files.
+* **ExcelDataReader and ExcelDataReader.DataSet:** Library used to read and write Excel files.
 * **SQL Server:** Relational database management system used as the destination for imported data.
 * **Testing:** xUnit
 
