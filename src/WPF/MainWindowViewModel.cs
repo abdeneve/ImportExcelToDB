@@ -8,6 +8,7 @@ using Microsoft.Win32;
 using System.Data;
 using System.IO;
 using System.Windows;
+using System.Windows.Threading;
 using WPF.Extensions;
 
 namespace WPF;
@@ -20,14 +21,6 @@ class MainWindowViewModel
     internal static string _connectionString { get; private set; }
 
     private const int BatchSize = 1000;
-
-    #region Commands
-
-    public RelayCommand<object> OpenFolderCommand { get; }
-    public RelayCommand<object> ShowErrorsCommand { get; }
-    public RelayCommand<object> ImportCommand { get; }
-
-    #endregion
 
     public MainWindowViewModel()
     {
@@ -63,8 +56,18 @@ class MainWindowViewModel
         try
         {
             Data.IsBusy = true;
-            await OpenFileAsync();
-            Data.IsBusy = false;
+
+            var thread = new Thread(async () =>
+            {
+                await OpenFileAsync();
+                
+                Data.IsBusy = false;
+                Dispatcher.Run();
+            });
+
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.IsBackground = true;
+            thread.Start();
         }
         catch (Exception ex)
         {
@@ -95,38 +98,31 @@ class MainWindowViewModel
             List<string> xlsxFiles = Directory.GetFiles(openFolderDialog.FolderName, "*.xlsx", SearchOption.TopDirectoryOnly).ToList();
 
             Data.IsInvalid = false;
-            Data.Files.Clear();
+            App.Current.Dispatcher.Invoke((Action)delegate
+            {
+                Data.Files.Clear();
+            });
+
+            var list = new List<ExcelFile>();
             foreach (string fileName in xlsxFiles)
             {
                 var name = fileName.Replace($"{openFolderDialog.FolderName}\\", "");
                 var file = new ExcelFile(name, fileName);
                 file.ValidateDateInFileName();
                 file.ValidateIsImported(_context.Sales.AsQueryable(), Data.SelectedCountry, Data.SelectedCustomer);
-                Data.Files.Add(file);
+                list.Add(file);
             }
 
-            var files = Data.Files.Where(p => p.IsValid());
-<<<<<<< HEAD
+            var files = list.Where(p => p.IsValid());
             ProcessFiles(files);
-=======
-            foreach (var file in files)
-            {
-                WorkBook workBook = WorkBook.Load(file.Path);
-                WorkSheet workSheet = workBook.WorkSheets.First();
-                DataTable dataTable = workSheet.ToDataTable(true);
-                file.RowCount = dataTable.Rows.Count;
-                file.DataTable = dataTable;
-                file.ValidateHasRows(dataTable);
 
-                long index = 0;
-                foreach (DataRow row in dataTable.Rows)
+            foreach (ExcelFile file in files)
+            {
+                App.Current.Dispatcher.Invoke((Action)delegate
                 {
-                    index++;
-                    file.ValidateRow(index, row);
-                }
-                file.ValidateIsReady();
+                    Data.Files.Add(file);
+                });
             }
->>>>>>> d621587ea7d36acf44807ab71cce9f978ef2ebb2
         }
         await Delay();
     }

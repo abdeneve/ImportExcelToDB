@@ -45,8 +45,8 @@
                 </StackPanel>
 
                 <DataGrid Name="FilesDataGrid" Grid.Row="1" Grid.Column="0" 
-                          ItemsSource="{Binding Data.Files, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                          SelectedItem="{Binding Data.SelectedFile, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding Data.Files, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged, AsyncState=True}" 
+                          SelectedItem="{Binding Data.SelectedFile, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"
                           IsReadOnly="True"
                           AutoGenerateColumns="False"
                           LoadingRow="FilesDataGrid_LoadingRow">

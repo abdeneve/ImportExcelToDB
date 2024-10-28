@@ -11,7 +11,7 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Sale> Sales { get; set; }
 
-    public ApplicationDbContext(string connectionString) 
+    public ApplicationDbContext(string connectionString)
     {
         _connectionString = connectionString;
     }
