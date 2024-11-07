@@ -116,7 +116,7 @@ class MainWindowViewModel
             var files = list.Where(p => p.IsValid());
             ProcessFiles(files);
 
-            foreach (ExcelFile file in files)
+            foreach (ExcelFile file in list)
             {
                 App.Current.Dispatcher.Invoke((Action)delegate
                 {
