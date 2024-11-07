@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Projects\\ImportExcelToDB\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B409C856-B6FD-45EB-92E1-EE87433351DC}|src\\Infrastructure\\Infrastructure.csproj|c:\\projects\\importexceltodb\\src\\infrastructure\\bulkinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B409C856-B6FD-45EB-92E1-EE87433351DC}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\bulkinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|solutionrelative:src\\wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C9A54557-76AD-4F95-927A-C9E93D0BD5A9}|src\\WPF\\WPF.csproj|c:\\projects\\importexceltodb\\src\\wpf\\maindatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindowViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\MainWindowViewModel.cs",
               "RelativeDocumentMoniker": "src\\WPF\\MainWindowViewModel.cs",
               "ToolTip": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\MainWindowViewModel.cs",
               "RelativeToolTip": "src\\WPF\\MainWindowViewModel.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAwH8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAANUAAAAAAAAAAAAiwOcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T01:16:50.46Z",
               "IsPinned": true,
@@ -44,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "MainDataModel.cs",
               "DocumentMoniker": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\MainDataModel.cs",
               "RelativeDocumentMoniker": "src\\WPF\\MainDataModel.cs",
@@ -53,8 +65,7 @@
               "ViewState": "AgIAAEcAAAAAAAAAAADwv2cAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T23:21:51.757Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -64,10 +75,23 @@
               "RelativeDocumentMoniker": "src\\WPF\\RelayCommand.cs",
               "ToolTip": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\RelayCommand.cs",
               "RelativeToolTip": "src\\WPF\\RelayCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwDcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T22:42:36.506Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BulkInsert.cs",
+              "DocumentMoniker": "C:\\Projects\\ImportExcelToDB\\src\\Infrastructure\\BulkInsert.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\BulkInsert.cs",
+              "ToolTip": "C:\\Projects\\ImportExcelToDB\\src\\Infrastructure\\BulkInsert.cs",
+              "RelativeToolTip": "src\\Infrastructure\\BulkInsert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T11:43:15.357Z",
               "EditorCaption": ""
             },
             {
@@ -76,15 +100,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\WPF\\appsettings.json",
+              "ToolTip": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\appsettings.json",
+              "RelativeToolTip": "src\\WPF\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-28T00:14:24.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\App.xaml",
+              "RelativeDocumentMoniker": "src\\WPF\\App.xaml",
+              "ToolTip": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\App.xaml",
+              "RelativeToolTip": "src\\WPF\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-28T00:14:21.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\MainWindow.xaml",
               "RelativeDocumentMoniker": "src\\WPF\\MainWindow.xaml",
               "ToolTip": "C:\\Projects\\ImportExcelToDB\\src\\WPF\\MainWindow.xaml",
               "RelativeToolTip": "src\\WPF\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-27T22:41:50.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T22:41:50.933Z"
             }
           ]
         }

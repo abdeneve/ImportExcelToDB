@@ -31,5 +31,9 @@ public class BulkInsert : IBulkInsert
         {
             throw;
         }
+        finally
+        {
+            connection.Close();
+        }
     }
 }
